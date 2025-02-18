@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@layer utilities {
+  .body-bg {
+    background-color: #e5e5e5;
+  }
+
+  .nav-bg {
+    background-color: #c5c9c7;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+.abt-data {
+  font-weight: bold;
+  min-width: 150px; /* Ensures labels are aligned */
+  display: inline-block; /* Prevents line breaks */
+}
+
+.header {
+  font-family: "poppins";
+}
