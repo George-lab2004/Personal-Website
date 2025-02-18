@@ -20,3 +20,16 @@ html {
 .header {
   font-family: "poppins";
 }
+
+/* Default Tilt effect */
+.tilt-container {
+  perspective: 1000px;
+}
+
+.tilt-image {
+  transition: transform 0.2s ease-in-out;
+}
+
+.tilt-container:hover .tilt-image {
+  transform: rotateX(10deg) rotateY(10deg) scale(1.1);
+}
