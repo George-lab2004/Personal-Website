@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView, motion } from "framer-motion";
 import {
   Dialog,
@@ -213,6 +213,10 @@ export default function Projects() {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [show, setShow] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showAll, setShowAll] = useState(false);
+  function handleShowAll() {
+    setShowAll(!showAll);
+  }
 
   const handleShow = (project) => {
     setSelectedProject(project);
@@ -241,7 +245,7 @@ export default function Projects() {
           Projects
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {projects.map((item) => (
+          {(showAll ? projects : projects.slice(0, 4)).map((item) => (
             <div
               key={item.name}
               className="bg-white border rounded-lg shadow-lg p-4 text-center transform transition duration-300 hover:scale-105 hover:shadow-xl"
@@ -260,31 +264,19 @@ export default function Projects() {
                   onClick={() => handleShow(item)}
                   className="text-blue-500 font-semibold ml-1 transition cursor-pointer hover:text-blue-700"
                 >
-                  Know More
+                  Read More
                 </button>
               </p>
-              {/* Buttons Section */}
-              <div className="flex justify-center gap-4 mt-4">
-                <a
-                  href={item.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-800 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-gray-700 transition"
-                >
-                  GitHub
-                </a>
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-500 transition"
-                >
-                  Live Demo
-                </a>
-              </div>
             </div>
           ))}
         </div>
+
+        <button
+          onClick={handleShowAll}
+          className="mt-6 px-6 py-2 bg-black text-white rounded-md mx-auto block hover:bg-gray-800 transition"
+        >
+          {showAll ? "Show Less" : "Show More"}
+        </button>
       </motion.div>
 
       {/* MODAL */}

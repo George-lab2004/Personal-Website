@@ -30,7 +30,7 @@ const skills = [
     label: "React JS",
   },
   {
-    icon: <SiTypescript className="text-4xl" style={{ color: "#3178C6" }} />,
+    icon: <SiTypescript className="text-4xl" style={{ color: "#1F6FDB" }} />,
     label: "TypeScript",
   },
   {
