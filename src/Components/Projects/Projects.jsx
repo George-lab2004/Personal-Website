@@ -267,6 +267,25 @@ export default function Projects() {
                   Read More
                 </button>
               </p>
+              {/* Buttons Section */}
+              <div className="flex justify-center gap-4 mt-4">
+                <a
+                  href={item.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-800 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-gray-700 transition"
+                >
+                  GitHub
+                </a>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-500 transition"
+                >
+                  Live Demo
+                </a>
+              </div>
             </div>
           ))}
         </div>
