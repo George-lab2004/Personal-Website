@@ -1,3 +1,4 @@
+import { TbBrandFramerMotion } from "react-icons/tb";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { useInView } from "framer-motion";
@@ -55,6 +56,12 @@ const skills = [
   },
   {
     icon: <SiTailwindcss className="text-4xl" style={{ color: "#38BDF8" }} />,
+    label: "Tailwind CSS",
+  },
+  {
+    icon: (
+      <TbBrandFramerMotion className="text-4xl" style={{ color: "#FF00FF" }} />
+    ),
     label: "Tailwind CSS",
   },
   {

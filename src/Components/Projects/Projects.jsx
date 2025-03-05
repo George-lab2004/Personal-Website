@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useInView, motion } from "framer-motion";
 import {
   Dialog,
@@ -20,7 +20,7 @@ import PortfolioTwo from "../../assets/PortfolioTwo.png";
 import Weather from "../../assets/Weather.png";
 import Yummy from "../../assets/Yummy.png";
 import Quiz from "../../assets/Quizz.png";
-
+import Dashboard from "../../assets/Dashboard.png";
 export default function Projects() {
   const projects = [
     {
@@ -112,6 +112,27 @@ export default function Projects() {
         "Implemented Firebase authentication.",
         "Created a responsive and modern UI with Tailwind.",
         "React-Router DOM",
+      ],
+    },
+    {
+      github: "https://github.com/George-lab2004/Dashboard",
+      link: "https://dashboard-rho-peach.vercel.app/",
+      img: Dashboard,
+      name: "Dashboard",
+      images: [Dashboard],
+      tech: [
+        "React",
+        "Tailwind CSS",
+        "Framer-Motion",
+        "lucide-icons",
+        "react-i18n",
+      ],
+      description:
+        "provides an intuitive interface for managing products, users, sales, orders, and analytics. It features interactive charts, animations, and multilingual support, all within a modern, responsive design",
+      challenges: [
+        "Responsive Design",
+        "Multiple Chart Integrations",
+        " Multilingual Support",
       ],
     },
     {
