@@ -115,6 +115,36 @@ export default function Projects() {
       ],
     },
     {
+      github: "https://github.com/George-lab2004/MovieApp",
+      link: "https://movie-app-amri.vercel.app/",
+      img: Movie,
+      name: "Movie App",
+      images: [Movie],
+      tech: [
+        "React",
+        "Tailwind CSS",
+        "Firebase",
+        "Axios",
+        "React Router",
+        "TMDB API",
+        "Framer motion",
+        "Vercel",
+      ],
+      description:
+        "a Movie app designed to help you discover, save, and organize your favorite movies and series, with real-time updates on trending and top-rated content!🎬",
+      challenges: [
+        "Used TMDB API to fetch and display movie data.",
+        "Implemented dynamic search functionality.",
+        "Created a user-friendly interface with Tailwind CSS.",
+        "Integrated Firebase for user authentication.",
+        "Used React Router for seamless navigation.",
+        "Implemented Framer Motion for smooth animations.",
+        "Deployed the app on Vercel for easy access.",
+        "Added Watchlist functionality to save favorite movies.",
+        "Included uoption to filter movies by genre.",
+      ],
+    },
+    {
       github: "https://github.com/George-lab2004/Dashboard",
       link: "https://dashboard-rho-peach.vercel.app/",
       img: Dashboard,
@@ -135,19 +165,7 @@ export default function Projects() {
         " Multilingual Support",
       ],
     },
-    {
-      github: "https://github.com/George-lab2004/Movie-App",
-      link: "https://movie-app-mocha-ten.vercel.app/",
-      img: Movie,
-      name: "Movie App",
-      images: [Movie],
-      tech: ["React", "API", "CSS"],
-      description: "A movie database app with search functionality. 🎬",
-      challenges: [
-        "Used an API to fetch and display movie data.",
-        "Implemented dynamic search functionality.",
-      ],
-    },
+
     {
       github: "https://github.com/George-lab2004/Yummy-App",
       link: "https://george-lab2004.github.io/Yummy-App/",
