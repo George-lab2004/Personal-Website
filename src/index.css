@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+/* ── DESIGN TOKENS ── */
+:root {
+  --bg:         #0B0F19;
+  --surface:    #131929;
+  --surface-2:  #192033;
+  --border:     #1E2D45;
+  --border-hi:  #253550;
+  --text:       #C8D6E4;
+  --text-dim:   #5A7A96;
+  --text-hi:    #EDF2F8;
+  --cyan:       #22D3EE;
+  --cyan-glow:  rgba(34, 211, 238, 0.15);
+}
+
+html  { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* scrollbar */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 2px; }
+
+/* noise texture overlay */
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.02;
+}
+
+/* utility classes */
+.header { font-family: 'Poppins', sans-serif; }
+
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--text-hi);
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; left: 0;
+  width: 40%;
+  height: 2px;
+  background: var(--cyan);
+  border-radius: 1px;
+}
+
+.card-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.card-surface:hover {
+  border-color: var(--border-hi);
+  box-shadow: 0 0 0 1px var(--border-hi), 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.cyan-btn {
+  background: var(--cyan);
+  color: #0B0F19;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.cyan-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.ghost-btn {
+  border: 1px solid var(--border-hi);
+  color: var(--text);
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: border-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.ghost-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+
+.tag {
+  font-size: 0.7rem;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 3px;
+  background: var(--surface-2);
+}
+
+.abt-data {
+  font-weight: bold;
+  min-width: 130px;
+  display: inline-block;
+}
