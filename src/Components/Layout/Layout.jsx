@@ -32,7 +32,7 @@ export default function Layout() {
           color: "var(--text-dim)",
         }}
       >
-        © 2025 George Milad — Full-Stack Developer · Cairo, EG
+        © 2026 George Milad — Full-Stack Developer · Cairo, EG
       </footer>
     </div>
   );
