@@ -7,17 +7,17 @@ import { useRef, useState } from "react";
 import { useInView, motion } from "framer-motion";
 
 const infoRows = [
-  { icon: <FaUser style={{ color: "#f59e0b" }} />,    label: "Name",        value: "George Milad" },
-  { icon: <FaMapMarkerAlt style={{ color: "#ef4444" }} />, label: "Location",    value: "Cairo, Egypt" },
-  { icon: <FaEnvelope style={{ color: "#3b82f6" }} />, label: "Email",       value: "George.milad2@gmail.com" },
-  { icon: <FaBriefcase style={{ color: "#8b5cf6" }} />, label: "Internship",  value: "Software Developer — HITS Solution" },
-  { icon: <FaGraduationCap style={{ color: "#22d3ee" }} />, label: "Degree",  value: "Business Information Systems" },
+  { icon: <FaUser style={{ color: "#f59e0b" }} />, label: "Name", value: "George Milad" },
+  { icon: <FaMapMarkerAlt style={{ color: "#ef4444" }} />, label: "Location", value: "Cairo, Egypt" },
+  { icon: <FaEnvelope style={{ color: "#3b82f6" }} />, label: "Email", value: "George.milad2@gmail.com" },
+  { icon: <FaBriefcase style={{ color: "#8b5cf6" }} />, label: "Internship", value: "Software Developer — HITS Solution" },
+  { icon: <FaGraduationCap style={{ color: "#22d3ee" }} />, label: "Degree", value: "Business Information Systems" },
   { icon: <FaUniversity style={{ color: "#6366f1" }} />, label: "University", value: "CIC × Cape Breton University (Dual Degree)" },
 ];
 
 export default function About() {
   const sectionRef = useRef(null);
-  const isInView    = useInView(sectionRef, { threshold: 0.15 });
+  const isInView = useInView(sectionRef, { threshold: 0.15 });
   const [animated, setAnimated] = useState(false);
   if (isInView && !animated) setAnimated(true);
 
@@ -72,12 +72,13 @@ export default function About() {
         <div className="flex-1">
           {/* Bio */}
           <p className="text-base leading-relaxed mb-8" style={{ color: "var(--text)" }}>
-            I'm a <strong style={{ color: "var(--text-hi)" }}>Full-Stack Developer</strong> based in
-            Cairo, Egypt, specializing in MERN stack, TypeScript, and AI integration.
-            I build production-grade software — ecommerce platforms with agentic AI, real estate
-            data pipelines on Azure, and B2B SaaS dashboards — not tutorial clones.
-            Currently completing a dual degree from Canadian International College and
-            Cape Breton University with a strong 3.86 GPA.
+            I'm a <strong style={{ color: "var(--text-hi)" }}>Full-Stack Developer</strong> based
+            in Cairo, Egypt. My main stack is React, TypeScript, Node.js and MongoDB, and I'm also
+            familiar with .NET, including ASP.NET Core MVC, EF Core and SQL Server. I enjoy building
+            features end to end, from the database to the UI, and I'm always working on getting the
+            fundamentals right. I'm a graduate of the dual degree program between Canadian
+            International College and Cape Breton University (GPA 3.89), and I'm looking for my
+            first full-time developer role where I can keep learning from a team.
           </p>
 
           {/* Info grid */}

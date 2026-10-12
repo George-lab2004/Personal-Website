@@ -7,8 +7,12 @@ import {
   SiTypescript, SiPostman, SiGithub, SiFigma,
   SiTailwindcss, SiMongodb, SiExpress,
   SiRedux, SiNextdotjs, SiFirebase, SiVercel,
+  SiDotnet,
 } from "react-icons/si";
-import { TbBrandFramerMotion } from "react-icons/tb";
+import {
+  TbBrandFramerMotion, TbBrandCSharp, TbDatabase,
+  TbDatabaseImport, TbShieldLock,
+} from "react-icons/tb";
 import Material from "../../assets/material-UI.png";
 
 const categories = [
@@ -16,13 +20,13 @@ const categories = [
     label: "Frontend",
     color: "#22d3ee",
     skills: [
-      { icon: <FaHtml5 style={{ color: "#E34F26" }} />,      label: "HTML5"       },
-      { icon: <FaCss3Alt style={{ color: "#2965F1" }} />,    label: "CSS3"        },
-      { icon: <FaReact style={{ color: "#61DBFB" }} />,      label: "React"       },
-      { icon: <SiNextdotjs style={{ color: "#fff" }} />,     label: "Next.js"     },
-      { icon: <SiTypescript style={{ color: "#1F6FDB" }} />, label: "TypeScript"  },
-      { icon: <SiRedux style={{ color: "#764ABC" }} />,      label: "Redux"       },
-      { icon: <SiTailwindcss style={{ color: "#38BDF8" }} />,label: "Tailwind"    },
+      { icon: <FaHtml5 style={{ color: "#E34F26" }} />, label: "HTML5" },
+      { icon: <FaCss3Alt style={{ color: "#2965F1" }} />, label: "CSS3" },
+      { icon: <FaReact style={{ color: "#61DBFB" }} />, label: "React" },
+      { icon: <SiNextdotjs style={{ color: "#fff" }} />, label: "Next.js" },
+      { icon: <SiTypescript style={{ color: "#1F6FDB" }} />, label: "TypeScript" },
+      { icon: <SiRedux style={{ color: "#764ABC" }} />, label: "Redux" },
+      { icon: <SiTailwindcss style={{ color: "#38BDF8" }} />, label: "Tailwind" },
       { icon: <TbBrandFramerMotion style={{ color: "#FF00FF" }} />, label: "Framer" },
       { icon: <img src={Material} alt="MUI" className="w-8 h-8 object-contain" />, label: "MUI" },
     ],
@@ -31,21 +35,26 @@ const categories = [
     label: "Backend & Data",
     color: "#4ade80",
     skills: [
-      { icon: <FaNodeJs style={{ color: "#68A063" }} />,     label: "Node.js"     },
-      { icon: <SiExpress style={{ color: "#ccc" }} />,       label: "Express"     },
-      { icon: <SiMongodb style={{ color: "#4DB33D" }} />,    label: "MongoDB"     },
+      { icon: <FaNodeJs style={{ color: "#68A063" }} />, label: "Node.js" },
+      { icon: <SiExpress style={{ color: "#ccc" }} />, label: "Express" },
+      { icon: <SiMongodb style={{ color: "#4DB33D" }} />, label: "MongoDB" },
+      { icon: <TbBrandCSharp style={{ color: "#9B4F96" }} />, label: "C#" },
+      { icon: <SiDotnet style={{ color: "#512BD4" }} />, label: "ASP.NET MVC" },
+      { icon: <TbDatabaseImport style={{ color: "#7C5CFF" }} />, label: "EF Core" },
+      { icon: <TbDatabase style={{ color: "#CC2927" }} />, label: "SQL Server" },
+      { icon: <TbShieldLock style={{ color: "#38BDF8" }} />, label: "Identity" },
     ],
   },
   {
     label: "Tools",
     color: "#a78bfa",
     skills: [
-      { icon: <FaGitAlt style={{ color: "#F05032" }} />,     label: "Git"         },
-      { icon: <SiGithub style={{ color: "#ccc" }} />,        label: "GitHub"      },
-      { icon: <SiPostman style={{ color: "#FF6A00" }} />,    label: "Postman"     },
-      { icon: <SiFigma style={{ color: "#F24E1E" }} />,      label: "Figma"       },
-      { icon: <SiFirebase style={{ color: "#FFA611" }} />,   label: "Firebase"    },
-      { icon: <SiVercel style={{ color: "#fff" }} />,        label: "Vercel"      },
+      { icon: <FaGitAlt style={{ color: "#F05032" }} />, label: "Git" },
+      { icon: <SiGithub style={{ color: "#ccc" }} />, label: "GitHub" },
+      { icon: <SiPostman style={{ color: "#FF6A00" }} />, label: "Postman" },
+      { icon: <SiFigma style={{ color: "#F24E1E" }} />, label: "Figma" },
+      { icon: <SiFirebase style={{ color: "#FFA611" }} />, label: "Firebase" },
+      { icon: <SiVercel style={{ color: "#fff" }} />, label: "Vercel" },
     ],
   },
 ];
@@ -73,7 +82,7 @@ function SkillCard({ icon, label }) {
 
 export default function Skills() {
   const sectionRef = useRef(null);
-  const isInView   = useInView(sectionRef, { threshold: 0.1 });
+  const isInView = useInView(sectionRef, { threshold: 0.1 });
   const [animated, setAnimated] = useState(false);
   if (isInView && !animated) setAnimated(true);
 

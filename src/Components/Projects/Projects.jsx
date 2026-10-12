@@ -7,29 +7,29 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Carousel } from "flowbite-react";
 
 // ── Image imports (existing) ──────────────────────────────────────
-import FoodApp    from "../../assets/FoodApp.png";
-import Crud       from "../../assets/Crud-system.png";
-import FreshCart  from "../../assets/FreshCart.png";
-import Hotel      from "../../assets/Hotel.png";
-import Movie      from "../../assets/Movie.png";
-import Games      from "../../assets/OOP-games.png";
-import Portfolio  from "../../assets/Portfolio.png";
+import FoodApp from "../../assets/FoodApp.png";
+import Crud from "../../assets/Crud-system.png";
+import FreshCart from "../../assets/FreshCart.png";
+import Hotel from "../../assets/Hotel.png";
+import Movie from "../../assets/Movie.png";
+import Games from "../../assets/OOP-games.png";
+import Portfolio from "../../assets/Portfolio.png";
 import PortfolioTwo from "../../assets/PortfolioTwo.png";
-import Weather    from "../../assets/Weather.png";
-import Yummy      from "../../assets/Yummy.png";
-import Quiz       from "../../assets/Quizz.png";
-import Dashboard  from "../../assets/Dashboard.png";
-import CvBuilder  from "../../assets/CvBuilder.png";
-import CvBuilderTwo   from "../../assets/CvBuilder/Process1.png";
+import Weather from "../../assets/Weather.png";
+import Yummy from "../../assets/Yummy.png";
+import Quiz from "../../assets/Quizz.png";
+import Dashboard from "../../assets/Dashboard.png";
+import CvBuilder from "../../assets/CvBuilder.png";
+import CvBuilderTwo from "../../assets/CvBuilder/Process1.png";
 import CvBuilderThree from "../../assets/CvBuilder/process2.png";
-import CvBuilderFour  from "../../assets/CvBuilder/Output.png";
+import CvBuilderFour from "../../assets/CvBuilder/Output.png";
 import TechMart from "../../assets/Techmart.png";
 import SmartMove from "../../assets/smartmove.png";
 
 // ── Accent colors per featured project ───────────────────────────
 const ACCENTS = {
-  techmart:      "#22d3ee",
-  smartmove:     "#4ade80",
+  techmart: "#22d3ee",
+  smartmove: "#4ade80",
   projectmonitor: "#a78bfa",
 };
 
@@ -90,7 +90,7 @@ const allProjects = [
     images: [],
     github: "https://github.com/George-lab2004/ProjectMonitorAI",
     link: "https://project-monitor-ai.vercel.app/",
-    tech: [ "TypeScript", "Node.js", "MongoDB", "Pusher", "Gemini AI", "Cron Jobs"],
+    tech: ["TypeScript", "Node.js", "MongoDB", "Pusher", "Gemini AI", "Cron Jobs"],
     description:
       "B2B project management backend only for now, with dual Manager and Team Member portals. Proactive AI engine runs on a daily cron schedule analyzing project health and sending alerts. Real-time communication via Pusher across 3 private channel types. Performance Intelligence scoring subsystem.",
     challenges: [
@@ -104,6 +104,28 @@ const allProjects = [
 
   // ── Regular projects ───────────────────────────────────────────
   {
+    id: "restauranthub",
+    featured: false,
+    accent: ACCENTS.restauranthub, // add this key to ACCENTS (e.g. the orange #d9480f from the app)
+    label: "ASP.NET Core MVC · EF Core · SQL Server",
+    img: "",           // import a screenshot, e.g. the menu page
+    name: "RestaurantHub",
+    images: "",      // add more: checkout, admin orders, order history
+    github: "https://github.com/George-lab2004/RestaurantHub",
+    link: [],                     // no live demo, so hide the button when empty
+    tech: ["C#", "ASP.NET Core MVC", "EF Core", "SQL Server", "ASP.NET Identity", "Razor", "Bootstrap", "Dependency Injection", "Custom Middleware"],
+    description:
+      "Online restaurant ordering system with separate customer and admin portals, built solo with ASP.NET Core MVC and EF Core Code First. Customers browse the menu, fill a session cart, check out and track orders. Admins manage categories and menu items with secure image upload, and run orders through an enforced status workflow with a full audit history. Prices and tax are always calculated server-side.",
+    challenges: [
+      "Role-based auth (Admin / Customer) with ASP.NET Identity and per-user ownership checks",
+      "Server-side pricing: the session cart stores only ids and quantities, never prices",
+      "Order status state machine enforced on the server, with an audit-trail history table",
+      "Price snapshots on order lines and Restrict deletes to protect order history",
+      "Secure image upload (extension whitelist, size limit, GUID names)",
+      "Custom middleware for request logging and global exception handling",
+    ],
+  }
+  , {
     id: "quiz", featured: false,
     github: "https://github.com/mohamedreda850/quizapp",
     link: "https://quizapp-wine-one.vercel.app/",
@@ -384,18 +406,18 @@ function ProjectCard({ project, onOpen }) {
 // ── Main component ────────────────────────────────────────────────
 export default function Projects() {
   const sectionRef = useRef(null);
-  const isInView   = useInView(sectionRef, { threshold: 0.05 });
+  const isInView = useInView(sectionRef, { threshold: 0.05 });
   const [animated, setAnimated] = useState(false);
-  const [show, setShow]         = useState(false);
+  const [show, setShow] = useState(false);
   const [selected, setSelected] = useState(null);
-  const [showAll, setShowAll]   = useState(false);
+  const [showAll, setShowAll] = useState(false);
   if (isInView && !animated) setAnimated(true);
 
   const featured = allProjects.filter(p => p.featured);
-  const regular  = allProjects.filter(p => !p.featured);
-  const visible  = showAll ? regular : regular.slice(0, 6);
+  const regular = allProjects.filter(p => !p.featured);
+  const visible = showAll ? regular : regular.slice(0, 6);
 
-  const openModal  = (p) => { setSelected(p); setShow(true); };
+  const openModal = (p) => { setSelected(p); setShow(true); };
   const closeModal = () => { setShow(false); setSelected(null); };
 
   return (
@@ -424,7 +446,7 @@ export default function Projects() {
           ))}
         </div>
 
-       
+
       </div>
 
       {/* ── Regular grid ── */}
