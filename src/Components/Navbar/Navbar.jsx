@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "../../assets/logo.png";
 
 const links = [
   { href: "#about",    label: "About"    },
@@ -32,8 +33,13 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <a href="#home" className="font-bold text-lg" style={{ color: "var(--text-hi)", letterSpacing: "-0.02em" }}>
-          George<span style={{ color: "var(--cyan)" }}>.</span>
+        <a href="#home" className="flex items-center group">
+          <img
+            src={logo}
+            alt="George Milad Logo"
+            className="h-11 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+            style={{ maxHeight: "48px" }}
+          />
         </a>
 
         {/* Desktop links */}

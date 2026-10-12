@@ -15,7 +15,7 @@ function Certificates() {
     { img: JSB, label: "JSB — Frontend Development", org: "Upskilling EG" },
     { img: Route, label: "Diploma — Frontend Development", org: "Route Academy" },
     { img: Node, label: "Diploma — Node.js Development", org: "Upskilling EG" },
-    { img: dotnet, label: "Diploma — Backend Development", org: "Canadian International College" },
+    { img: dotnet, label: "Course — Backend Development", org: "Canadian International College" },
 
   ];
 
