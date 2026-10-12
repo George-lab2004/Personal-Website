@@ -15,9 +15,9 @@ export default function Home() {
   });
 
   const stats = [
-    { val: "3+",   label: "Years Learning"   },
-    { val: "15+",  label: "Projects Shipped" },
-    { val: "3.89", label: "GPA"              },
+    { val: "3+", label: "Years Learning" },
+    { val: "15+", label: "Projects Shipped" },
+    { val: "3.89", label: "GPA" },
   ];
 
   return (
@@ -93,9 +93,7 @@ export default function Home() {
 
             {/* Bio */}
             <p className="mb-8 leading-relaxed" style={{ color: "var(--text-dim)", maxWidth: "480px" }}>
-              Building production-grade web systems — MERN stack, agentic AI, and
-              cloud data pipelines. I ship software that works, scales, and
-              doesn't need an explanation to impress.
+              Software developer building web apps with the MERN stack and exploring agentic AI workflows, with some practical experience in .NET. Just focused on writing clean code, learning every day, and helping build things that work.
             </p>
 
             {/* CTAs */}
@@ -205,7 +203,7 @@ export default function Home() {
                 Core Stack
               </p>
               <div className="flex flex-wrap gap-2">
-                {["React", "Node.js", "MongoDB", "TypeScript", "Python", "Azure"].map(t => (
+                {["React", "Node.js", "MongoDB", "TypeScript",].map(t => (
                   <span key={t} className="tag">{t}</span>
                 ))}
               </div>
