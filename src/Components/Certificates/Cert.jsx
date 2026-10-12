@@ -1,17 +1,22 @@
 import Route from "../../assets/Route.jpg";
 import JSB from "../../assets/Upskilling.jpeg";
+import Node from "../../assets/node.jpeg";
+import dotnet from "../../assets/dotnet.jpg";
 import { useRef, useState } from "react";
 import { useInView, motion } from "framer-motion";
 
 function Certificates() {
   const sectionRef = useRef(null);
-  const isInView   = useInView(sectionRef, { threshold: 0.15 });
+  const isInView = useInView(sectionRef, { threshold: 0.15 });
   const [animated, setAnimated] = useState(false);
   if (isInView && !animated) setAnimated(true);
 
   const certs = [
-    { img: JSB,   label: "JSB — Frontend Development", org: "Upskilling EG" },
+    { img: JSB, label: "JSB — Frontend Development", org: "Upskilling EG" },
     { img: Route, label: "Diploma — Frontend Development", org: "Route Academy" },
+    { img: Node, label: "Diploma — Node.js Development", org: "Upskilling EG" },
+    { img: dotnet, label: "Diploma — Backend Development", org: "Canadian International College" },
+
   ];
 
   return (
